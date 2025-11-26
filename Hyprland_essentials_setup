@@ -1,0 +1,14 @@
+###############################
+###Hyprland essentials setup###
+###############################
+
+HYPRLAND_CFG ="$HOME/.config/hypr/hyprland.conf
+#change the localization to where you want it to be
+SCREENSHOT_SCRIPT_LOCATION="$HOME/screenshot.sh"
+POWER_MENU_LOCATION="$HOME/power_menu.sh"
+
+cat << EOF >> HYPRLAND_CFG
+bind = $mainMod, SPACE, exec, rofi -show drun
+bind = $mainMod, S, exec, $SCREENSHOT_SCRIPT_LOCATION
+bind = $mainMod, Z, exec, kitty --title "Power Menu" $POWER_MENU_LOCATION
+EOF
